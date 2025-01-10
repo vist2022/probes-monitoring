@@ -56,19 +56,23 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-test-binder</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
+		
+		<dependency>
 				<groupId>telran.probes</groupId>
 				<artifactId>probes-api</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -81,4 +85,7 @@
 
 	
 
+	<modules>
+		<module>analyzer</module>
+	</modules>
 </project>
