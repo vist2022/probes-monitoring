@@ -55,7 +55,7 @@ class AnalyzerServiceTest {
 	RangeProviderClient service;
 
 	@MockBean
-	RestTemplate rest;
+	private RestTemplate rest;
 
 	@Test
 	@Order(1)
@@ -91,10 +91,10 @@ class AnalyzerServiceTest {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	void testRemoteWebServerAnaible() {
+	void testRemoteWebServerUnavaible() {
 		when(rest.exchange(any(String.class), any(HttpMethod.class), any(), any(Class.class)))
 		.thenThrow(new RuntimeException("Service is unavaible"));
-		assertEquals(RANGE_DEFAULT, service.getRange(SENSOR_ID_NOT_FOUND));
+		assertEquals(RANGE_DEFAULT, service.getRange(SENSOR_ID_UNAVAILBLE));
 	}
 	
 	@Test
