@@ -87,5 +87,8 @@
 
 	<modules>
 		<module>analyzer</module>
+		<module>sensor-emails-provider</module>
+		<module>email-notifier</module>
+		<module>avg-reducer</module>
 	</modules>
 </project>

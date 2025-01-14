@@ -1,6 +1,6 @@
 package telran.probes;
 
-
+import static org.mockito.ArgumentMatchers.any;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -89,12 +89,13 @@ class AnalyzerServiceTest {
 		assertEquals(RANGE, service.getRange(SENSOR_ID_NOT_FOUND));
 	}
 	
-//	@Test
-//	void testRemoteWebServerAnaible() {
-//		when(rest.exchange(any(String.class), any(HttpMethod.class), any(), any(Class.class)))
-//		.thenThrow(new RuntimeException("Service is unavaible"));
-//		assertEquals(RANGE_DEFAULT, service.getRange(SENSOR_ID_NOT_FOUND));
-//	}
+	@SuppressWarnings("unchecked")
+	@Test
+	void testRemoteWebServerAnaible() {
+		when(rest.exchange(any(String.class), any(HttpMethod.class), any(), any(Class.class)))
+		.thenThrow(new RuntimeException("Service is unavaible"));
+		assertEquals(RANGE_DEFAULT, service.getRange(SENSOR_ID_NOT_FOUND));
+	}
 	
 	@Test
 	void testUpdateRangeInMap() throws InterruptedException {
