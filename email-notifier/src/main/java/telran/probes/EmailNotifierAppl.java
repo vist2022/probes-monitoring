@@ -10,5 +10,5 @@ public class EmailNotifierAppl {
 		SpringApplication.run(EmailNotifierAppl.class, args);
 
 	}
-
+//consumer<diviadata>
 }
