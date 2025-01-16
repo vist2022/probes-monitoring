@@ -67,7 +67,6 @@ class EmailNotifierControllerTest {
 
 		MimeMessage[] messages = mailExtention.getReceivedMessages();
 		assertEquals(emails.length, messages.length);
-
 		MimeMessage message = messages[0];
 		Address[] recipients = message.getAllRecipients();
 		assertEquals(emails.length, recipients.length);
